@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src = "adv-flow-control.js"></script>
+<link rel="stylesheet" type="text/css" href="default.css" />
+<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+<title>Advanced Control Flow</title>
+</head>
+
+<body>
+<div id="div_header1">LOOPS (Factorial Calculation)</div>
+<div id="div_header2" style = "display:none">LOOPS (Height of Pyramid)</div>
+<div id="div_body">
+
+	<div class="div1">
+		<div class="div1-1" id = "localVariables" >Local Variables</div>
+		<div class="div1-2" id = "initialize" >Initialize</div>
+		<div class="show" id ="show"  style = "display:none">
+			<p id = 'localVariablesI'>i    = </p>
+			<BR>
+			<p id = "localVariablesFact">fact = </p>
+		</div>	
+		<div class="div1-body" id = "div1-body">
+
+			<p>Loop Type</p>
+			</br>
+
+			<select class="loop_type_list" name="intrested_in" id = "loop_list" >
+         		<option value="for">for</option>
+                <option value="while">while</option>
+                <option value="do-while">do-while</option>
+                </select>
+                </br>
+                 <br></br>
+
+			<p>Enter p for Calculating for p !</p>
+			</br>
+
+			<input  class="input_p_field" type="text" name="p_value_input"  id = "inputValue">
+			 </br>
+            <br></br>
+            <div ><button  class="btn_start" type="submit" id = "btnStart" >Start</button></div>
+            <div ><button  class="btn_next" type="submit" id = "btnNext" disabled >Next</button></div>
+
+
+			<div ><button  class="btn_nested" type="submit" id = "nestedLoop">Nested Loop</button></div>
+
+		</div>
+
+		<div class="nested" id = "nested" style = "display: none">
+
+			
+
+			<p>Enter height of pyramid !</p>
+			</br>
+
+			<input  class="input_pyramid_height" type="text" name="pyramid_input" id = "nestedInput">
+			 </br>
+            <br></br>
+            <div ><button  class="btn_start" type="submit" id = 'nestedStartBtn'>Start</button></div>
+            <div ><button  class="btn_next"  type="submit" id = 'nestedNextBtn'>Next</button></div>
+
+
+			<div ><button  class="btn_nested" type="submit" id = "simpleLoop">Simple Loop</button></div>
+
+		</div>
+	</div>
+
+	<div class="div2"> 
+
+		<div class="div2-1">Code Output</div>
+		<div class="div2-2-1" id = "div221">The following example calculates the factorial of a number. Notice that the loop(for/while/do-while) executes as long as loop condition is true. To end the execution of the loop we keep a counter so that after incrementing/decrementing the counter the number of times we want to run it, it eventually fails the test condition.</div>
+		<div class="div2-2-2" style = "display: none" id = "div222">This example shows that loops can also be put inside one another, i.e. nested, this allows us to write more complicated programs. Here the task of printing a pyramid of stars is divided as follows. The topmost loop iterates through the rows of the pyramid, and the other 3 loops divide the task of painting left side spaces, stars and middle spaces, and right side spaces consecutively. </div>
+		<div class="div2-3"></div>
+	</div>
+	<div class="div3">
+		<div class="div3-1">Step Execution</div>
+		<div class="div3-2" id = "32blank">
+			<div id = "forLoopContent">
+				<div class = "hide" id = 'codeContentFor1'> int main(){ </div>
+				<div class = "hide" id = 'codeContentFor2'> int p; </div>
+				<div class = "hide" id = 'codeContentFor3'> int fact=1; </div>
+				<div class = "hide" id = 'codeContentFor4'> if(p==0) </div>
+				<div class = "hide" id = 'codeContentFor5'> { </div>
+				<div class = "hide" id = 'codeContentFor6'> return 1; </div>
+				<div class = "hide" id = 'codeContentFor7'> } </div>
+				<div class = "hide" id = 'forLoopHead'> for(int i=p;i>=1;i--) </div>
+				<div class = "hide" id = 'forLoopBody1'> { </div>
+				<div class = "hide" id = 'forLoopBody2'> fact=fact*i;  </div>
+				<div class = "hide" id = 'forLoopTail'> } </div>
+				<div class = "hide" id = 'codeContentFor8'> return fact; </div>
+				<div class = "hide" id = 'codeContentFor9'> } </div>
+			</div>
+
+			<div id = "whileLoopContent">	
+				<div class = "hide" id = 'codeContentWhile1'> int main(){ </div>
+				<div class = "hide" id = 'codeContentWhile2'> int p; </div>
+				<div class = "hide" id = 'codeContentWhile3'> int fact=1; </div>
+				<div class = "hide" id = 'codeContentWhile4'> if(p==0) </div>
+				<div class = "hide" id = 'codeContentWhile5'> { </div>
+				<div class = "hide" id = 'codeContentWhile6'> return 1; </div>
+				<div class = "hide" id = 'codeContentWhile7'> } </div>
+				<div class = "hide" id = 'whileLoopHead'> while (i>=1) </div>
+				<div class = "hide" id = 'whileLoopBody1'> { </div>
+				<div class = "hide" id = 'whileLoopBody2'> fact=fact*i;  </div>
+				<div class = "hide" id = 'whileLoopBody3'> i--; </div>
+				<div class = "hide" id = 'whileLoopTail'> } </div>
+				<div class = "hide" id = 'codeContentWhile8'> return fact; </div>
+				<div class = "hide" id = 'codeContentWhile9'> } </div>
+			</div>
+
+			<div id = "dowhileLoopContent">	
+				<div class = "hide" id = 'codeContentDoWhile1'> int main(){ </div>
+				<div class = "hide" id = 'codeContentDoWhile2'> int p; </div>
+				<div class = "hide" id = 'codeContentDoWhile3'> int fact=1; </div>
+				<div class = "hide" id = 'codeContentDoWhile4'> int i=p; </div>
+				<div class = "hide" id = 'codeContentDoWhile5'> if(p==0) </div>
+				<div class = "hide" id = 'codeContentDoWhile6'> { </div>
+				<div class = "hide" id = 'codeContentDoWhile7'> return 1; </div>
+				<div class = "hide" id = 'codeContentDoWhile8'> } </div>
+				<div class = "hide" id = 'dowhileLoopHead'> do </div>
+				<div class = "hide" id = 'dowhileLoopBody1'> { </div>
+				<div class = "hide" id = 'dowhileLoopBody2'> fact=fact*i;  </div>
+				<div class = "hide" id = 'dowhileLoopBody3'> i--; </div>
+				<div class = "hide" id = 'dowhileLoopTail'> }while(i>=1); </div>
+			</div>
+
+			<div id = "nestedLoopContent">	
+				<div class = "hide" id = 'codeContentNested1'> int main(){ </div>
+				<div class = "hide" id = 'codeContentNested2'> int i,j,k; </div>
+				<div class = "hide" id = 'codeContentNested3'> int height; </div>
+				<div class = "hide" id = 'codeContentNested4'> for (i=0;i&lt;height;i++) </div>
+				<div class = "hide" id = 'codeContentNested5'> { </div>
+				<div class = "hide" id = 'codeContentNested6'>  </div>
+				<div class = "hide" id = 'codeContentNested7'> for(j=0;j&lt;height-i-1;j++) </div>
+				<div class = "hide" id = 'codeContentNested8'> { </div>
+				<div class = "hide" id = 'codeContentNested9'> printf(" "); </div>
+				<div class = "hide" id = 'codeContentNested10'> } </div>
+				<div class = "hide" id = 'codeContentNested11'>  </div>
+				<div class = "hide" id = 'codeContentNested12'> for(k=j;k&lt;height-1;k++)  </div>
+				<div class = "hide" id = 'codeContentNested13'> { </div>
+				<div class = "hide" id = 'codeContentNested14'> printf("*"); </div>
+				<div class = "hide" id = 'codeContentNested15'> printf(" "); </div>
+				<div class = "hide" id = 'codeContentNested16'> } </div>
+				<div class = "hide" id = 'codeContentNested17'> printf("*"); </div>
+				<div class = "hide" id = 'codeContentNested18'>  </div>
+				<div class = "hide" id = 'codeContentNested19'> for(j=0;j&lt;height-i-1;j++)  </div>
+				<div class = "hide" id = 'codeContentNested20'> { </div>
+				<div class = "hide" id = 'codeContentNested21'> printf(" "); </div>
+				<div class = "hide" id = 'codeContentNested22'> } </div>
+				<div class = "hide" id = 'codeContentNested23'> printf("\n"); </div>
+				<div class = "hide" id = 'codeContentNested24'> } </div>
+				<div class = "hide" id = 'codeContentNested25'> return 0; </div>
+				<div class = "hide" id = 'codeContentNested26'> } </div>
+			</div>
+
+		</div>
+	</div>
+</div>
+</body>
+</html>
